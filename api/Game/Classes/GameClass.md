@@ -2,7 +2,7 @@
 title: GameClass
 description: Класс, который определяет режим игры.
 published: false
-date: 2023-06-24T11:45:45.228Z
+date: 2023-06-24T11:56:13.205Z
 tags: class, gameclass, класс
 editor: markdown
 dateCreated: 2023-06-24T08:14:21.565Z
@@ -23,7 +23,7 @@ dateCreated: 2023-06-24T08:14:21.565Z
 | [Network](TODO:link_to_type)  |  network  | [Сетевой](TODO:link_to_type) объект, который может использоваться для отправки сообщений между клиентом и сервером.|
 |              any              |   data    | Данные о начале игры.                                                                      |
 {.dense}
-## Переменные
+## Константы
 - [defaultInventorySize](#defaultInventorySize)
 - [enableAggro](#enableAggro)
 - [enableAmmoConsumption](#enableAmmoConsumption)
@@ -52,6 +52,30 @@ dateCreated: 2023-06-24T08:14:21.565Z
 - [server_onStopTest](#server_onStopTest)
 - [client_onLoadingScreenLifted](#client_onLoadingScreenLifted)
 - [client_onLanguageChange](#client_onLanguageChange)
+## Описание констант
+<h3 id="defaultInventorySize">defaultInventorySize <i>integer</i></h3>
+
+Устанавливает размер инвентаря игрока по умолчанию. (По умолчанию 40)
+<h3 id="enableAggro">enableAggro <i>boolean</i></h3>
+
+Включает или отключает вражескую агрессию. (По умолчанию установлено значение true)
+<h3 id="enableAmmoConsumption">enableAmmoConsumption <i>boolean</i></h3>
+
+Включает или отключает расход боеприпасов. (По умолчанию установлено значение false)
+<h3 id="enableFuelConsumption">enableFuelConsumption <i>boolean</i></h3>
+
+Включает или отключает расход топлива. (По умолчанию установлено значение false)
+<h3 id="enableLimitedInventory">enableLimitedInventory <i>boolean</i></h3>
+
+Включает или отключает ограниченный инвентарь. (По умолчанию установлено значение false)
+
+Когда включено ограничение инвентаря, количество предметов ограничено. Когда он выключен, игрок имеет доступ ко всем предметам. (За исключением элементов со значением json "hidden": true)
+<h3 id="enableRestrictions">enableRestrictions <i>boolean</i></h3>
+
+Включает или отключает ограничения на постройку. (По умолчанию установлено значение false)
+<h3 id="enableUpgrade">enableUpgrade <i>boolean</i></h3>
+
+Включает или отключает улучшение интерактивной детали. (По умолчанию установлено значение false)
 ## События
 <h3 id="server_onCreate">server_onCreate(self) <i>serverEventCallback</i></h3>
 
