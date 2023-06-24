@@ -2,14 +2,20 @@
 title: GameClass
 description: Класс, который определяет режим игры.
 published: false
-date: 2023-06-24T08:14:21.565Z
-tags: class, класс, gameclass
+date: 2023-06-24T11:42:59.647Z
+tags: class, gameclass, класс
 editor: markdown
 dateCreated: 2023-06-24T08:14:21.565Z
 ---
 
 # GameClass
-Class Description
+Класс, который определяет режим игры. Создается только один экземпляр этого класса.
+
+Это первый скрипт, который будет запущен.
+
+Игровой скрипт отвечает за создание [миров](TODO:link_to_type) и управление ими.
+
+Может получать события, отправленные с помощью [sm.event.sendToGame](TODO:link_to_func).
 ## Переменные
 |              Тип              |    Имя    |                                                      Описание                                                      |
 |-------------------------------|-----------|--------------------------------------------------------------------------------------------------------------------|
@@ -41,7 +47,7 @@ Class Description
 ## События
 <h3 id="server_onCreate">server_onCreate(self) <i>serverEventCallback</i></h3>
 
-Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая детал.
+Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая деталь.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -50,7 +56,7 @@ Class Description
 {.dense}
 <h3 id="client_onCreate">client_onCreate(self) <i>clientEventCallback</i></h3>
 
-Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая детал.
+Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая деталь.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -154,4 +160,117 @@ Class Description
 | table |  self |Экземпляр класса.                                                                  |
 |  any  |  data |Любой объект Lua, отправленный с помощью [Network.setClientData](TODO:link_to_func)|
 |integer|channel|Клиентский канал передачи данных, 1 или 2. (по умолчанию: 1)                       |
+{.dense}
+<h3 id="server_onPlayerJoined">server_onPlayerJoined(self, player, newPlayer) <i>serverEventCallback</i></h3>
+
+Вызывается, когда [игрок](TODO:link_to_type) присоединяется к игре.
+
+Аргументы:
+|Тип|Имя|Описание|
+|---|---|--------|
+|table|self|Экземпляр класса.|
+|[Player](TODO:link_to_type)|player|Присоединившийся игрок|
+|boolean|newPlayer|True, если игрок раньше не присоединялся к этой игре.|
+{.dense}
+<h3 id="server_onPlayerLeft">server_onPlayerLeft(self, player) <i>serverEventCallback</i></h3>
+
+Вызывается, когда [игрок](TODO:link_to_type) отключается от игры.
+
+Аргументы:
+|Тип|Имя|Описание|
+|---|---|--------|
+|table|self|Экземпляр класса.|
+|[Player](TODO:link_to_type)|player|Отключившийся игрок|
+{.dense}
+<h3 id="server_onReset">server_onReset(self) <i>serverEventCallback</i></h3>
+
+> Только для Challenge Mode!
+{.is-info}
+
+Вызывается, когда пользователь хочет сбросить уровень.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+{.dense}
+<h3 id="server_onRestart">server_onRestart(self) <i>serverEventCallback</i></h3>
+
+> Только для Challenge Mode!
+{.is-info}
+
+Вызывается, когда пользователь хочет перезапустить уровень.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+{.dense}
+<h3 id="server_onSaveLevel">server_onSaveLevel(self) <i>serverEventCallback</i></h3>
+
+> Только для редактора Challenge Mode!
+{.is-info}
+
+Вызывается, когда пользователь хочет сохранить испытание.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+{.dense}
+<h3 id="server_onTestLevel">server_onTestLevel(self) <i>serverEventCallback</i></h3>
+
+> Только для редактора Challenge Mode!
+{.is-info}
+
+Вызывается, когда пользователь хочет сохранить и протестировать испытание.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+{.dense}
+<h3 id="server_onStopTest">server_onStopTest(self) <i>serverEventCallback</i></h3>
+
+> Только для редактора Challenge Mode!
+{.is-info}
+
+Вызывается, когда пользователь хочет прекратить тестирование испытания.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+{.dense}
+<h3 id="client_onLoadingScreenLifted">client_onLoadingScreenLifted(self) <i>clientEventCallback</i></h3>
+
+Вызывается, когда показывается экран загрузки при входе в игру.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+{.dense}
+<h3 id="client_onLanguageChange">client_onLanguageChange(self, language) <i>clientEventCallback</i></h3>
+
+Вызывается, когда игрок меняет язык в игровых настройках.
+
+Возможные языковые значения:
+- Russian
+- Brazilian
+- Chinese
+- French
+- German
+- Italian
+- Japanese
+- Korean
+- Polish
+- Spanish
+- English
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+|string|language|Установленный язык.|
 {.dense}
