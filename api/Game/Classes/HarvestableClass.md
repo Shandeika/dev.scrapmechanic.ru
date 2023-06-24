@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-24T12:13:37.859Z
+date: 2023-06-24T12:22:49.179Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -36,21 +36,30 @@ dateCreated: 2023-06-24T12:03:31.102Z
 - [client_onUpdate](#client_onUpdate)
 - [client_onClientDataUpdate](#client_onClientDataUpdate)
 ## События класса
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
-- [](#)
+- [server_onUnload](#server_onUnload)
+- [server_onReceiveUpdate](#server_onReceiveUpdate)
+- [client_onCollision](#client_onCollision)
+- [server_onCollision](#server_onCollision)
+- [client_onProjectile](#client_onProjectile)
+- [server_onProjectile](#server_onProjectile)
+- [server_onExplosion](#server_onExplosion)
+- [client_onMelee](#client_onMelee)
+- [server_onMelee](#server_onMelee)
+- [server_onRemoved](#server_onRemoved)
+- [client_canErase](#client_canErase)
+- [server_canErase](#server_canErase)
+- [client_onInteract](#client_onInteract)
+- [client_canInteract](#client_canInteract)
+- [client_onAction](#client_onAction)
+## Описание констант
+<h3 id="poseWeightCount">poseWeightCount <i>integer</i></h3>
+Задает количество анимационных поз, которые может использовать модель урожая.
+
+Значением могут быть целые числа 0-3. (По умолчанию 0, никаких поз)
+
+Значение, большее 0, указывает на то, что "mesh" визуализируемого объекта настроена на смешивание с "pose0", "pose1", "pose2".
+
+Это, например, используется для выращивания растений.
 ## События
 <h3 id="server_onCreate">server_onCreate(self) <i>serverEventCallback</i></h3>
 
@@ -167,4 +176,26 @@ dateCreated: 2023-06-24T12:03:31.102Z
 | table |  self |Экземпляр класса.                                                                  |
 |  any  |  data |Любой объект Lua, отправленный с помощью [Network.setClientData](TODO:link_to_func)|
 |integer|channel|Клиентский канал передачи данных, 1 или 2. (по умолчанию: 1)                       |
+{.dense}
+<h3 id="server_onUnload">server_onUnload(self) <i>serverEventCallback</i></h3>
+
+Вызывается, когда [собираемый урожай](TODO:link_to_type) выгружается из игры, потому что ни один [персонаж](TODO:link_to_type) [игрока](TODO:link_to_type) не находится достаточно близко к нему. Также вызывается при выходе из игры.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+{.dense}
+<h3 id="server_onReceiveUpdate">server_onReceiveUpdate(self) <i>serverEventCallback</i></h3>
+
+Вызывается время от времени в классе [HarvestableClass](), чтобы указать, что прошло некоторое время.
+
+По соображениям производительности рекомендуется использовать это вместо HarvestableClass.server_onFixedUpdate для обновлений, которые не должны происходить часто.
+
+Используйте sm.game.getCurrentTick для расчета времени.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
 {.dense}
