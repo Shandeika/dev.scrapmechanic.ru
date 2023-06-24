@@ -2,21 +2,28 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-24T12:03:31.102Z
-tags: class, класс, harvestableclass, harvestable
+date: 2023-06-24T12:13:37.859Z
+tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
 ---
 
-# Class
-Class Description
+# HarvestableClass
+Класс, который создается для каждого [собираемого](TODO:link_to_type) объекта в игре.
+
+Дерево или растение, которое можно собрать, является типичным примером пригодного для сбора урожая.
+
+Может получать события, отправленные с помощью [sm.event.sendToHarvestable](TODO:link_to_func).
 ## Переменные
-|              Тип              |    Имя    |                                                      Описание                                                      |
-|-------------------------------|-----------|--------------------------------------------------------------------------------------------------------------------|
-| [Character](TODO:link_to_type)| character | Игровой объект [персонажа](TODO:link_to_type), принадлежащий этому экземпляру класса.                              |
-| [Network](TODO:link_to_type)  |  network  | [Сетевой](TODO:link_to_type) объект, который может использоваться для отправки сообщений между клиентом и сервером.|
-|              any              |   data    | Информация переданная из таблицы data в json.                                                                      |
+|Тип|Имя|Описание|
+|---|---|--------|
+|[Harvestable](TODO:link_to_type)|harvestable|[Собираемый](TODO:link_to_type) игровой объект, принадлежащий этому экземпляру класса.|
+|[Network](TODO:link_to_type)|network|[Сетевой](TODO:link_to_type) объект, который может использоваться для отправки сообщений между клиентом и сервером.|
+|[Storage](TODO:link_to_type)|storage|(Только на стороне сервера.) Объект [хранения](TODO:link_to_type), который может быть использован для хранения данных при следующей загрузке этого объекта после выгрузки.|
+|any|data|Информация переданная из таблицы data в json.|
 {.dense}
+## Константы
+- [poseWeightCount](#poseWeightCount)
 ## Общие события
 - [server_onCreate](#server_onCreate)
 - [client_onCreate](#client_onCreate)
@@ -29,6 +36,20 @@ Class Description
 - [client_onUpdate](#client_onUpdate)
 - [client_onClientDataUpdate](#client_onClientDataUpdate)
 ## События класса
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
+- [](#)
 - [](#)
 ## События
 <h3 id="server_onCreate">server_onCreate(self) <i>serverEventCallback</i></h3>
