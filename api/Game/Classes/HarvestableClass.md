@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-24T12:22:49.179Z
+date: 2023-06-24T12:47:23.024Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -190,9 +190,9 @@ dateCreated: 2023-06-24T12:03:31.102Z
 
 Вызывается время от времени в классе [HarvestableClass](), чтобы указать, что прошло некоторое время.
 
-По соображениям производительности рекомендуется использовать это вместо HarvestableClass.server_onFixedUpdate для обновлений, которые не должны происходить часто.
+По соображениям производительности рекомендуется использовать это вместо [HarvestableClass.server_onFixedUpdate](#server_onFixedUpdate) для обновлений, которые не должны происходить часто.
 
-Используйте sm.game.getCurrentTick для расчета времени.
+Используйте [sm.game.getCurrentTick](TODO:link_to_func) для расчета времени.
 
 Аргументы:
 | Тип | Имя|     Описание    |
