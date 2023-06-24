@@ -2,7 +2,7 @@
 title: GameClass
 description: Класс, который определяет режим игры.
 published: false
-date: 2023-06-24T11:42:59.647Z
+date: 2023-06-24T11:45:45.228Z
 tags: class, gameclass, класс
 editor: markdown
 dateCreated: 2023-06-24T08:14:21.565Z
@@ -43,7 +43,15 @@ dateCreated: 2023-06-24T08:14:21.565Z
 - [client_onUpdate](#client_onUpdate)
 - [client_onClientDataUpdate](#client_onClientDataUpdate)
 ## События класса
-- [](#)
+- [server_onPlayerJoined](#server_onPlayerJoined)
+- [server_onPlayerLeft](#server_onPlayerLeft)
+- [server_onReset](#server_onReset)
+- [server_onRestart](#server_onRestart)
+- [server_onSaveLevel](#server_onSaveLevel)
+- [server_onTestLevel](#server_onTestLevel)
+- [server_onStopTest](#server_onStopTest)
+- [client_onLoadingScreenLifted](#client_onLoadingScreenLifted)
+- [client_onLanguageChange](#client_onLanguageChange)
 ## События
 <h3 id="server_onCreate">server_onCreate(self) <i>serverEventCallback</i></h3>
 
