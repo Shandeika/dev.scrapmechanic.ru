@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-24T12:47:23.024Z
+date: 2023-06-25T04:23:48.681Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -53,7 +53,8 @@ dateCreated: 2023-06-24T12:03:31.102Z
 - [client_onAction](#client_onAction)
 ## Описание констант
 <h3 id="poseWeightCount">poseWeightCount <i>integer</i></h3>
-Задает количество анимационных поз, которые может использовать модель урожая.
+
+Задает количество поз анимации, которые может использовать модель урожая.
 
 Значением могут быть целые числа 0-3. (По умолчанию 0, никаких поз)
 
@@ -198,4 +199,18 @@ dateCreated: 2023-06-24T12:03:31.102Z
 | Тип | Имя|     Описание    |
 |-----|----|-----------------|
 |table|self|Экземпляр класса.|
+{.dense}
+<h3 id="client_onCollision">client_onCollision(self, other, position, selfPointVelocity, otherPointVelocity, normal) <i>clientEventCallback</i></h3>
+
+Вызывается, когда [собираемый](TODO:link_to_type) объект сталкивается с другим объектом.
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+|[Shape](TODO:link_to_type)/[Character](TODO:link_to_type)|other|Другой объект.|
+|[Vec3](TODO:link_to_type)|position|Позиция, в которой произошло столкновение.|
+|[Vec3](TODO:link_to_type)|selfPointVelocity|Скорость, которую имел [урожай](TODO:link_to_type) в момент столкновения.|
+|[Vec3](TODO:link_to_type)|otherPointVelocity|Скорость, которую имел другой объект в момент столкновения.|
+|[Vec3](TODO:link_to_type)|normal|Точка соприкосновения между [урожаем](TODO:link_to_type) и другим объектом.|
 {.dense}
