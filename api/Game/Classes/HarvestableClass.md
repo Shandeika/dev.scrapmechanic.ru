@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-25T08:45:24.940Z
+date: 2023-06-25T10:34:06.176Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -269,6 +269,9 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="client_onMelee">client_onMelee(self, position, attacker, damage, power, direction, normal) <i>clientEventCallback</i></h3>
 
+> Если атакующий будет уничтожен до того, как произойдет удар, значение attacker будет равно nil.
+{.is-info}
+
 Вызывается, когда [урожай](TODO:link_to_type) получает удар в ближнем бою.
 
 Аргументы:
@@ -284,6 +287,9 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="server_onMelee">server_onMelee(self, position, attacker, damage, power, direction, normal) <i>serverEventCallback</i></h3>
 
+> Если атакующий будет уничтожен до того, как произойдет удар, значение attacker будет равно nil.
+{.is-info}
+
 Вызывается, когда [урожай](TODO:link_to_type) получает удар в ближнем бою.
 
 Аргументы:
@@ -297,3 +303,6 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |[Vec3](TODO:link_to_type)|direction|Направление, в которое был нанесён урон.|
 |[Vec3](TODO:link_to_type)|normal|Точка в которую попал удар.|
 {.dense}
+<h3 id="server_onRemoved">server_onRemoved(self, player) <i>serverEventCallback</i></h3>
+
+Вызывается, когда [игрок](TODO:link_to_type) убирает [урожай](TODO:link_to_type).
