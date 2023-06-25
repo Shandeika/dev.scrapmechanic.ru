@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-25T04:26:45.235Z
+date: 2023-06-25T08:42:12.956Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -64,7 +64,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 ## События
 <h3 id="server_onCreate">server_onCreate(self) <i>serverEventCallback</i></h3>
 
-Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая детал.
+Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая деталь.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -73,7 +73,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="client_onCreate">client_onCreate(self) <i>clientEventCallback</i></h3>
 
-Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая детал.
+Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая деталь.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -255,4 +255,45 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |any|customData|Объект Lua, который может быть определен во время выстрела с помощью [sm.projectile.customProjectileAttack](TODO:link_to_func) или другой пользовательской версии.|
 |[Vec3](TODO:link_to_type)|normal|Точка в которую попал снаряд.|
 |[Uuid](TODO:link_to_type)|uuid|Uuid снаряда.|
+{.dense}
+<h3 id="server_onExplosion">server_onExplosion(self, center, destructionLevel) <i>serverEventCallback</i></h3>
+
+Вызывается, когда [урожай](TODO:link_to_type) взрывается.
+
+Аргументы:
+|Тип|Имя|Описание|
+|---|---|--------|
+|table|self|Экземпляр класса.|
+|[Vec3](TODO:link_to_type)|center|Эпицентр взырва.|
+|integer|destructionLevel|Уровень разрушений, причиненных этим взрывом. Соответствует показателю прочности [детали](TODO:link_to_type).|
+{.dense}
+<h3 id="client_onMelee">client_onMelee(self, position, attacker, damage, power, direction, normal) <i>clientEventCallback</i></h3>
+
+Вызывается, когда [урожай](TODO:link_to_type) получает удар в ближнем бою.
+
+Аргументы:
+|Тип|Имя|Описание|
+|---|---|--------|
+|table|self|Экземпляр класса.|
+|[Vec3](TODO:link_to_type)|position|Позиция, в которую попал удар.|
+|[Player](TODO:link_to_type)/nil|attacker|Нападавший. Может быть [игроком](TODO:link_to_type) или nil, если неизвестно. Атаки, предпринятые юнитом, будут равны nil для клиента.|
+|integer|damage|Количество нанесённого урона от удара.|
+|number|power|"Сила" удара|
+|[Vec3](TODO:link_to_type)|direction|Направление, в которое был нанесён урон.|
+|[Vec3](TODO:link_to_type)|normal|Точка в которую попал удар.|
+{.dense}
+<h3 id="server_onMelee">server_onMelee(self, position, attacker, damage, power, direction, normal) <i>serverEventCallback</i></h3>
+
+Вызывается, когда [урожай](TODO:link_to_type) получает удар в ближнем бою.
+
+Аргументы:
+|Тип|Имя|Описание|
+|---|---|--------|
+|table|self|Экземпляр класса.|
+|[Vec3](TODO:link_to_type)|position|Позиция, в которую попал удар.|
+|[Player](TODO:link_to_type)/[Unit](TODO:link_to_type)/nil|attacker|Нападавший. Может быть [игроком](TODO:link_to_type), [юнитом](TODO:link_to_type) или nil, если неизвестно.|
+|integer|damage|Количество нанесённого урона от удара.|
+|number|power|"Сила" удара|
+|[Vec3](TODO:link_to_type)|direction|Направление, в которое был нанесён урон.|
+|[Vec3](TODO:link_to_type)|normal|Точка в которую попал удар.|
 {.dense}
