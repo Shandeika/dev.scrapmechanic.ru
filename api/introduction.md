@@ -2,7 +2,7 @@
 title: Введение
 description: Введение в API LUA
 published: false
-date: 2023-06-24T05:23:15.605Z
+date: 2023-06-25T10:25:02.704Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-23T16:52:20.334Z
@@ -85,12 +85,11 @@ myOtherShape:setColor( color ) -- Копируем цвет предыдущей
 ```
 
 Userdata также могут иметь переменные. Это делает точно то же самое, что и описанное выше:
-
-
 ```lua
 local color = myShape.color -- получить цвет детали
-myOtherShape.color = color) -- Копируем цвет предыдущей детали на другую
+myOtherShape.color = color -- Копируем цвет предыдущей детали на другую
 ```
+
 Другой способ получить объект [Color](TODO:link_to_type) - это вызвать [sm.color.new](TODO:link_to_func). Вот пример, в котором цвет детали будет установлен на красный:
 ```lua
 local color = sm.color.new( 1.0, 0.0, 0.0 ) -- создаём userdata типа Color
