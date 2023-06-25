@@ -2,7 +2,7 @@
 title: CharacterClass
 description: Класс, который создается для каждого персонажа в игре.
 published: false
-date: 2023-06-25T08:38:01.765Z
+date: 2023-06-25T08:38:41.656Z
 tags: character, class, класс, персонаж
 editor: markdown
 dateCreated: 2023-06-24T05:26:00.455Z
@@ -194,7 +194,6 @@ dateCreated: 2023-06-24T05:26:00.455Z
 |[Vec3](TODO:link_to_type)|direction|Направление, в которое был нанесён урон.|
 |[Vec3](TODO:link_to_type)|normal|Точка в которую попал удар.|
 {.dense}
-
 <h3 id="client_onCollision">client_onCollision(self, other, position, selfPointVelocity, otherPointVelocity, normal) <i>clientEventCallback</i></h3>
 
 Вызывается, когда [персонаж](TODO:link_to_type) сталкивается с другим объектом.
