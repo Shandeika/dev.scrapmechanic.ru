@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-25T08:42:12.956Z
+date: 2023-06-25T08:45:24.940Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -276,7 +276,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |---|---|--------|
 |table|self|Экземпляр класса.|
 |[Vec3](TODO:link_to_type)|position|Позиция, в которую попал удар.|
-|[Player](TODO:link_to_type)/nil|attacker|Нападавший. Может быть [игроком](TODO:link_to_type) или nil, если неизвестно. Атаки, предпринятые юнитом, будут равны nil для клиента.|
+|[Player](TODO:link_to_type)/nil|attacker|Нападавший. Может быть [игроком](TODO:link_to_type) или nil, если неизвестно. Атаки, предпринятые [юнитом](TODO:link_to_type), будут равны nil для клиента.|
 |integer|damage|Количество нанесённого урона от удара.|
 |number|power|"Сила" удара|
 |[Vec3](TODO:link_to_type)|direction|Направление, в которое был нанесён урон.|
