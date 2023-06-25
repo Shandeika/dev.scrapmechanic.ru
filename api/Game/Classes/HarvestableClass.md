@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-25T04:26:07.520Z
+date: 2023-06-25T04:26:45.235Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -232,7 +232,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |[Player](TODO:link_to_type)/[Shape](TODO:link_to_type)/[Harvestable](TODO:link_to_type)/nil|shooter|Стрелок может быть игроком, деталью, Harvestable или nil, если неизвестно. Снаряды, выпущенные юнитом, будут равны nil для клиента.|
 |number|damage|Количество нанесённого урона от снаряда.|
 |any|customData|Объект Lua, который может быть определен во время выстрела с помощью [sm.projectile.customProjectileAttack](TODO:link_to_func) или другой пользовательской версии.|
-|[Vec3](TODO:link_to_type)|normal|Направление поверхности.|
+|[Vec3](TODO:link_to_type)|normal|Точка в которую попал снаряд.|
 |[Uuid](TODO:link_to_type)|uuid|Uuid снаряда.|
 {.dense}
 <h3 id="server_onProjectile">server_onProjectile(self, position, airTime, velocity, projectileName, shooter, damage, customData, normal, uuid) <i>serverEventCallback</i></h3>
@@ -253,6 +253,6 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |[Player](TODO:link_to_type)/[Shape](TODO:link_to_type)/[Harvestable](TODO:link_to_type)/nil|shooter|Стрелок может быть игроком, деталью, Harvestable или nil, если неизвестно. Снаряды, выпущенные юнитом, будут равны nil для клиента.|
 |number|damage|Количество нанесённого урона от снаряда.|
 |any|customData|Объект Lua, который может быть определен во время выстрела с помощью [sm.projectile.customProjectileAttack](TODO:link_to_func) или другой пользовательской версии.|
-|[Vec3](TODO:link_to_type)|normal|Направление поверхности.|
+|[Vec3](TODO:link_to_type)|normal|Точка в которую попал снаряд.|
 |[Uuid](TODO:link_to_type)|uuid|Uuid снаряда.|
 {.dense}
