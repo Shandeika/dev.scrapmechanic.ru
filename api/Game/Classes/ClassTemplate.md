@@ -2,7 +2,7 @@
 title: Class
 description: 
 published: false
-date: 2023-06-24T07:55:07.030Z
+date: 2023-06-25T04:11:42.980Z
 tags: class, класс
 editor: markdown
 dateCreated: 2023-06-24T06:39:06.156Z
@@ -14,8 +14,8 @@ Class Description
 |              Тип              |    Имя    |                                                      Описание                                                      |
 |-------------------------------|-----------|--------------------------------------------------------------------------------------------------------------------|
 | [Character](TODO:link_to_type)| character | Игровой объект [персонажа](TODO:link_to_type), принадлежащий этому экземпляру класса.                              |
-| [Network](TODO:link_to_type)  |  network  | [Сетевой](TODO:link_to_type) объект, который может использоваться для отправки сообщений между клиентом и сервером.|
-|              any              |   data    | Информация переданная из таблицы data в json.                                                                      |
+| [Network](TODO:link_to_type)  |network    | [Сетевой](TODO:link_to_type) объект, который может использоваться для отправки сообщений между клиентом и сервером.|
+|any                            |data       | Информация переданная из таблицы data в json.                                                                      |
 {.dense}
 ## Общие события
 - [server_onCreate](#server_onCreate)
@@ -100,7 +100,7 @@ Class Description
 Аргументы:
 | Тип  |   Имя  |                            Описание                             |
 |------|--------|-----------------------------------------------------------------|
-|table |  self  |Экземпляр класса.                                                |
+|table |self    |Экземпляр класса.                                                |
 |number|timeStep|Период времени в тике. (Всегда равно 0.025, или же 1/40 секунды.)|
 {.dense}
 <h3 id="client_onFixedUpdate">client_onFixedUpdate(self, timeStep) <i>clientEventCallback</i></h3>
@@ -112,7 +112,7 @@ Class Description
 Аргументы:
 | Тип  |   Имя  |                            Описание                             |
 |------|--------|-----------------------------------------------------------------|
-|table |  self  |Экземпляр класса.                                                |
+|table |self    |Экземпляр класса.                                                |
 |number|timeStep|Период времени в тике. (Всегда равно 0.025, или же 1/40 секунды.)|
 {.dense}
 <h3 id="client_onUpdate">client_onUpdate(self, deltaTime) <i>clientEventCallback</i></h3>
@@ -128,7 +128,7 @@ Class Description
 Аргументы:
 |  Тип |   Имя   |                    Описание                   |
 |------|---------|-----------------------------------------------|
-|table |   self  |Экземпляр класса.                              |
+|table |self     |Экземпляр класса.                              |
 |number|deltaTime|Разность во времени с момента последнего кадра.|
 <h3 id="client_onClientDataUpdate">client_onClientDataUpdate(self, data, channel) <i>clientEventCallback</i></h3>
 
@@ -143,7 +143,7 @@ Class Description
 Аргументы:
 |  Тип  |  Имя  |                                      Описание                                     |
 |-------|-------|-----------------------------------------------------------------------------------|
-| table |  self |Экземпляр класса.                                                                  |
-|  any  |  data |Любой объект Lua, отправленный с помощью [Network.setClientData](TODO:link_to_func)|
+|table  |self   |Экземпляр класса.                                                                  |
+|any    |data   |Любой объект Lua, отправленный с помощью [Network.setClientData](TODO:link_to_func)|
 |integer|channel|Клиентский канал передачи данных, 1 или 2. (по умолчанию: 1)                       |
 {.dense}
