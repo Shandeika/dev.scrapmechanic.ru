@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-25T04:23:48.681Z
+date: 2023-06-25T04:26:07.520Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -213,4 +213,46 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |[Vec3](TODO:link_to_type)|selfPointVelocity|Скорость, которую имел [урожай](TODO:link_to_type) в момент столкновения.|
 |[Vec3](TODO:link_to_type)|otherPointVelocity|Скорость, которую имел другой объект в момент столкновения.|
 |[Vec3](TODO:link_to_type)|normal|Точка соприкосновения между [урожаем](TODO:link_to_type) и другим объектом.|
+{.dense}
+<h3 id="client_onProjectile">client_onProjectile(self, position, airTime, velocity, projectileName, shooter, damage, customData, normal, uuid) <i>clientEventCallback</i></h3>
+
+Вызывается, когда в [урожай](TODO:link_to_type) попадает снаряд.
+
+> Если стрелок будет уничтожен до того, как произойдет попадание, значение shooter будет равно nil.
+{.is-info}
+
+Аргументы:
+|Тип|Имя|Описание|
+|---|---|--------|
+|table|self|Экземпляр класса.|
+|[Vec3](TODO:link_to_type)|position|Позиция, в которую попал снаряд.|
+|number|airTime|Время в секундах, которое снаряд потратил на полет до попадания.|
+|[Vec3](TODO:link_to_type)|velocity|Скорость снаряда при ударе.|
+|string|projectileName|Название снаряда. (Устарело, вместо него используйте uuid)|
+|[Player](TODO:link_to_type)/[Shape](TODO:link_to_type)/[Harvestable](TODO:link_to_type)/nil|shooter|Стрелок может быть игроком, деталью, Harvestable или nil, если неизвестно. Снаряды, выпущенные юнитом, будут равны nil для клиента.|
+|number|damage|Количество нанесённого урона от снаряда.|
+|any|customData|Объект Lua, который может быть определен во время выстрела с помощью [sm.projectile.customProjectileAttack](TODO:link_to_func) или другой пользовательской версии.|
+|[Vec3](TODO:link_to_type)|normal|Направление поверхности.|
+|[Uuid](TODO:link_to_type)|uuid|Uuid снаряда.|
+{.dense}
+<h3 id="server_onProjectile">server_onProjectile(self, position, airTime, velocity, projectileName, shooter, damage, customData, normal, uuid) <i>serverEventCallback</i></h3>
+
+Вызывается, когда в [урожай](TODO:link_to_type) попадает снаряд.
+
+> Если стрелок будет уничтожен до того, как произойдет попадание, значение shooter будет равно nil.
+{.is-info}
+
+Аргументы:
+|Тип|Имя|Описание|
+|---|---|--------|
+|table|self|Экземпляр класса.|
+|[Vec3](TODO:link_to_type)|position|Позиция, в которую попал снаряд.|
+|number|airTime|Время в секундах, которое снаряд потратил на полет до попадания.|
+|[Vec3](TODO:link_to_type)|velocity|Скорость снаряда при ударе.|
+|string|projectileName|Название снаряда. (Устарело, вместо него используйте uuid)|
+|[Player](TODO:link_to_type)/[Shape](TODO:link_to_type)/[Harvestable](TODO:link_to_type)/nil|shooter|Стрелок может быть игроком, деталью, Harvestable или nil, если неизвестно. Снаряды, выпущенные юнитом, будут равны nil для клиента.|
+|number|damage|Количество нанесённого урона от снаряда.|
+|any|customData|Объект Lua, который может быть определен во время выстрела с помощью [sm.projectile.customProjectileAttack](TODO:link_to_func) или другой пользовательской версии.|
+|[Vec3](TODO:link_to_type)|normal|Направление поверхности.|
+|[Uuid](TODO:link_to_type)|uuid|Uuid снаряда.|
 {.dense}
