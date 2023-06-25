@@ -2,7 +2,7 @@
 title: CharacterClass
 description: Класс, который создается для каждого персонажа в игре.
 published: false
-date: 2023-06-25T08:38:41.656Z
+date: 2023-06-25T08:41:58.291Z
 tags: character, class, класс, персонаж
 editor: markdown
 dateCreated: 2023-06-24T05:26:00.455Z
@@ -10,7 +10,7 @@ dateCreated: 2023-06-24T05:26:00.455Z
 
 # CharacterClass
 Класс, который создается для каждого [персонажа](TODO:link_to_type) в игре.
-[Персонаж](TODO:link_to_type) - это временный "сосуд", управляемый [игроком](TODO:link_to_type) или ["устройством"](TODO:link_to_type) (Unit).
+[Персонаж](TODO:link_to_type) - это временный "сосуд", управляемый [игроком](TODO:link_to_type) или [юнитом](TODO:link_to_type) (Unit).
 
 Может получать события, отправленные с помощью [sm.event.sendToCharacter](TODO:link_to_func).
 
