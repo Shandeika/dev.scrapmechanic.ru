@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-26T04:09:48.572Z
+date: 2023-06-26T04:12:41.510Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -64,7 +64,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 ## События
 <h3 id="server_onCreate">server_onCreate(self) <i>serverEventCallback</i></h3>
 
-Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая деталь.
+Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новый Shape.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -73,7 +73,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="client_onCreate">client_onCreate(self) <i>clientEventCallback</i></h3>
 
-Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новая деталь.
+Вызывается при создании скриптового объекта. Это происходит, когда ставится или загружается из файла сохранения новый Shape.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -82,7 +82,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="server_onDestroy">server_onDestroy(self) <i>serverEventCallback</i></h3>
 
-Вызывается, когда интерактивная деталь уничтожается.
+Вызывается, когда Shape уничтожается.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -91,7 +91,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="client_onDestroy">client_onDestroy(self) <i>clientEventCallback</i></h3>
 
-Вызывается, когда интерактивная деталь уничтожается.
+Вызывается, когда Shape уничтожается.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -100,7 +100,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="server_onRefresh">server_onRefresh(self) <i>serverEventCallback</i></h3>
 
-Вызывается, если Lua-скрипт, прикрепленный к интерактивной детали, изменяется во время работы игры.
+Вызывается, если Lua-скрипт, прикрепленный к Shape, изменяется во время работы игры.
 
 > Для этого события требуется, чтобы Scrap Mechanic был запущен с флагом '-dev'. Это позволит скриптам автоматически обновляться при внесении изменений.
 {.is-info}
@@ -112,7 +112,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="client_onRefresh">client_onRefresh(self) <i>clientEventCallback</i></h3>
 
-Вызывается, если Lua-скрипт, прикрепленный к интерактивной детали, изменяется во время работы игры.
+Вызывается, если Lua-скрипт, прикрепленный к Shape, изменяется во время работы игры.
 
 > Для этого события требуется, чтобы Scrap Mechanic был запущен с флагом '-dev'. Это позволит скриптам автоматически обновляться при внесении изменений.
 {.is-info}
@@ -229,7 +229,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |number|airTime|Время в секундах, которое снаряд потратил на полет до попадания.|
 |[Vec3](TODO:link_to_type)|velocity|Скорость снаряда при ударе.|
 |string|projectileName|Название снаряда. (Устарело, вместо него используйте uuid)|
-|[Player](TODO:link_to_type)/[Shape](TODO:link_to_type)/[Harvestable](TODO:link_to_type)/nil|shooter|Стрелок может быть игроком, деталью, Harvestable или nil, если неизвестно. Снаряды, выпущенные юнитом, будут равны nil для клиента.|
+|[Player](TODO:link_to_type)/[Shape](TODO:link_to_type)/[Harvestable](TODO:link_to_type)/nil|shooter|Стрелок может быть игроком, Shape, Harvestable или nil, если неизвестно. Снаряды, выпущенные юнитом, будут равны nil для клиента.|
 |number|damage|Количество нанесённого урона от снаряда.|
 |any|customData|Объект Lua, который может быть определен во время выстрела с помощью [sm.projectile.customProjectileAttack](TODO:link_to_func) или другой пользовательской версии.|
 |[Vec3](TODO:link_to_type)|normal|Точка в которую попал снаряд.|
@@ -250,7 +250,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |number|airTime|Время в секундах, которое снаряд потратил на полет до попадания.|
 |[Vec3](TODO:link_to_type)|velocity|Скорость снаряда при ударе.|
 |string|projectileName|Название снаряда. (Устарело, вместо него используйте uuid)|
-|[Player](TODO:link_to_type)/[Shape](TODO:link_to_type)/[Harvestable](TODO:link_to_type)/nil|shooter|Стрелок может быть игроком, деталью, Harvestable или nil, если неизвестно. Снаряды, выпущенные юнитом, будут равны nil для клиента.|
+|[Player](TODO:link_to_type)/[Shape](TODO:link_to_type)/[Harvestable](TODO:link_to_type)/nil|shooter|Стрелок может быть игроком, Shape, Harvestable или nil, если неизвестно. Снаряды, выпущенные юнитом, будут равны nil для клиента.|
 |number|damage|Количество нанесённого урона от снаряда.|
 |any|customData|Объект Lua, который может быть определен во время выстрела с помощью [sm.projectile.customProjectileAttack](TODO:link_to_func) или другой пользовательской версии.|
 |[Vec3](TODO:link_to_type)|normal|Точка в которую попал снаряд.|
