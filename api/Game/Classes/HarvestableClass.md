@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-26T04:20:20.287Z
+date: 2023-06-26T04:23:44.523Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -370,4 +370,16 @@ self.harvestable:destroy()
 |-----|----|-----------------|
 |table|self|Экземпляр класса.|
 |[Character](TODO:link_to_type)|character|[Персонаж](TODO:link_to_type) [игрока](TODO:link_to_type), который смотрит на [Harvestable](TODO:link_to_type).|
+{.dense}
+<h3 id="client_onAction">client_onAction(self, action, state) <i>clientEventCallback</i></h3>
+
+Вызывается, когда урожай получает входные данные от игрока, [персонаж](TODO:link_to_type) которого привязан к [Harvestable](TODO:link_to_type).
+
+Когда [персонаж](TODO:link_to_type) сидит в "сиденье", [персонаж](TODO:link_to_type) также считается привязанным к [Harvestable](TODO:link_to_type).
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+|integer|action|Действие в виде целочисленного значения. Более подробная информация в [sm.interactable.actions](TODO:link_to_namespace#actions).|
 {.dense}
