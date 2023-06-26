@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-25T10:34:06.176Z
+date: 2023-06-26T03:58:29.565Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -306,3 +306,6 @@ dateCreated: 2023-06-24T12:03:31.102Z
 <h3 id="server_onRemoved">server_onRemoved(self, player) <i>serverEventCallback</i></h3>
 
 Вызывается, когда [игрок](TODO:link_to_type) убирает [урожай](TODO:link_to_type).
+
+> [HarvestableClass]() должен удалять [урожай](TODO:link_to_type) с помощью [Harvestable.destroy](TODO:link_to_func).
+{.is-info}
