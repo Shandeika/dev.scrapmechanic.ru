@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-26T04:26:23.979Z
+date: 2023-06-26T04:26:33.075Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -367,7 +367,6 @@ self.harvestable:destroy()
 
 > Этот обратный вызов также отвечает за обновление текста взаимодействия, отображаемого игроку с помощью [sm.gui.setInteractionText](TODO:link_to_func#setInteractionText).
 {.is-info}
-
 
 Аргументы:
 | Тип | Имя|     Описание    |
