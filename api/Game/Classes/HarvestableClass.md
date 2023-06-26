@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-26T04:23:44.523Z
+date: 2023-06-26T04:26:23.979Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -365,12 +365,21 @@ self.harvestable:destroy()
 
 Вызывается, чтобы проверить, можно ли взаимодействовать с [Harvestable](TODO:link_to_type) в данный момент.
 
+> Этот обратный вызов также отвечает за обновление текста взаимодействия, отображаемого игроку с помощью [sm.gui.setInteractionText](TODO:link_to_func#setInteractionText).
+{.is-info}
+
+
 Аргументы:
 | Тип | Имя|     Описание    |
 |-----|----|-----------------|
 |table|self|Экземпляр класса.|
 |[Character](TODO:link_to_type)|character|[Персонаж](TODO:link_to_type) [игрока](TODO:link_to_type), который смотрит на [Harvestable](TODO:link_to_type).|
 {.dense}
+
+Должно вернуть:
+|Тип|Описание|
+|---|--------|
+|boolean|Логическое значение, указывающее, можно ли взаимодействовать с [Harvestable](TODO:link_to_type) или нет. (По умолчанию используется значение true, если реализован [client_onInteract](#client_onInteract), в противном случае значение false)
 <h3 id="client_onAction">client_onAction(self, action, state) <i>clientEventCallback</i></h3>
 
 Вызывается, когда урожай получает входные данные от игрока, [персонаж](TODO:link_to_type) которого привязан к [Harvestable](TODO:link_to_type).
@@ -382,4 +391,5 @@ self.harvestable:destroy()
 |-----|----|-----------------|
 |table|self|Экземпляр класса.|
 |integer|action|Действие в виде целочисленного значения. Более подробная информация в [sm.interactable.actions](TODO:link_to_namespace#actions).|
+|boolean|state|Значение True при начале действия, значение false при завершении действия.|
 {.dense}
