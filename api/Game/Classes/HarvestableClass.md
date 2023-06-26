@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-26T04:13:28.715Z
+date: 2023-06-26T04:17:14.350Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -349,4 +349,14 @@ self.harvestable:destroy()
 | Тип |     Описание    |
 |-----|-----------------|
 |boolean|Логическое значение, указывающее, можно ли удалить [Harvestable](TODO:link_to_type) или нет. (По умолчанию используется "removable" из json, которое по умолчанию равно false)|
+{.dense}
+<h3 id="client_onInteract">client_onInteract(self, character, state) <i>clientEventCallback</i></h3>
+
+Вызывается, когда [игрок](TODO:link_to_type) взаимодействует с [Harvestable](TODO:link_to_type) нажатием клавиши "Использовать" (по умолчанию "E").
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+|[Character](TODO:link_to_type)|character|[Персонаж](TODO:link_to_type) [игрока](TODO:link_to_type), который взаимодействует с [Harvestable](TODO:link_to_type).
 {.dense}
