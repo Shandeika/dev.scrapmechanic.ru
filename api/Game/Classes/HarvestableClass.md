@@ -2,22 +2,22 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-26T04:06:28.625Z
+date: 2023-06-26T04:09:48.572Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
 ---
 
 # HarvestableClass
-Класс, который создается для каждого [собираемого](TODO:link_to_type) объекта в игре.
+Класс, который создается для каждого [Harvestable](TODO:link_to_type) в игре.
 
-Дерево или растение, которое можно собрать, является типичным примером пригодного для сбора урожая.
+Дерево или растение, которое можно собрать, является типичным примером harvestable.
 
 Может получать события, отправленные с помощью [sm.event.sendToHarvestable](TODO:link_to_func).
 ## Переменные
 |Тип|Имя|Описание|
 |---|---|--------|
-|[Harvestable](TODO:link_to_type)|harvestable|[Собираемый](TODO:link_to_type) игровой объект, принадлежащий этому экземпляру класса.|
+|[Harvestable](TODO:link_to_type)|harvestable|[Harvestable](TODO:link_to_type), принадлежащий этому экземпляру класса.|
 |[Network](TODO:link_to_type)|network|[Сетевой](TODO:link_to_type) объект, который может использоваться для отправки сообщений между клиентом и сервером.|
 |[Storage](TODO:link_to_type)|storage|(Только на стороне сервера.) Объект [хранения](TODO:link_to_type), который может быть использован для хранения данных при следующей загрузке этого объекта после выгрузки.|
 |any|data|Информация переданная из таблицы data в json.|
@@ -54,7 +54,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 ## Описание констант
 <h3 id="poseWeightCount">poseWeightCount <i>integer</i></h3>
 
-Задает количество поз анимации, которые может использовать модель урожая.
+Задает количество поз анимации, которые может использовать модель harvestable.
 
 Значением могут быть целые числа 0-3. (По умолчанию 0, никаких поз)
 
@@ -180,7 +180,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="server_onUnload">server_onUnload(self) <i>serverEventCallback</i></h3>
 
-Вызывается, когда [собираемый урожай](TODO:link_to_type) выгружается из игры, потому что ни один [персонаж](TODO:link_to_type) [игрока](TODO:link_to_type) не находится достаточно близко к нему. Также вызывается при выходе из игры.
+Вызывается, когда [Harvestable](TODO:link_to_type) выгружается из игры, потому что ни один [персонаж](TODO:link_to_type) [игрока](TODO:link_to_type) не находится достаточно близко к нему. Также вызывается при выходе из игры.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -202,7 +202,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="client_onCollision">client_onCollision(self, other, position, selfPointVelocity, otherPointVelocity, normal) <i>clientEventCallback</i></h3>
 
-Вызывается, когда [собираемый](TODO:link_to_type) объект сталкивается с другим объектом.
+Вызывается, когда [Harvestable](TODO:link_to_type) сталкивается с другим объектом.
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -212,11 +212,11 @@ dateCreated: 2023-06-24T12:03:31.102Z
 |[Vec3](TODO:link_to_type)|position|Позиция, в которой произошло столкновение.|
 |[Vec3](TODO:link_to_type)|selfPointVelocity|Скорость, которую имел [урожай](TODO:link_to_type) в момент столкновения.|
 |[Vec3](TODO:link_to_type)|otherPointVelocity|Скорость, которую имел другой объект в момент столкновения.|
-|[Vec3](TODO:link_to_type)|normal|Точка соприкосновения между [урожаем](TODO:link_to_type) и другим объектом.|
+|[Vec3](TODO:link_to_type)|normal|Точка соприкосновения между [Harvestable](TODO:link_to_type) и другим объектом.|
 {.dense}
 <h3 id="client_onProjectile">client_onProjectile(self, position, airTime, velocity, projectileName, shooter, damage, customData, normal, uuid) <i>clientEventCallback</i></h3>
 
-Вызывается, когда в [урожай](TODO:link_to_type) попадает снаряд.
+Вызывается, когда в [Harvestable](TODO:link_to_type) попадает снаряд.
 
 > Если стрелок будет уничтожен до того, как произойдет попадание, значение shooter будет равно nil.
 {.is-info}
@@ -237,7 +237,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="server_onProjectile">server_onProjectile(self, position, airTime, velocity, projectileName, shooter, damage, customData, normal, uuid) <i>serverEventCallback</i></h3>
 
-Вызывается, когда в [урожай](TODO:link_to_type) попадает снаряд.
+Вызывается, когда в [Harvestable](TODO:link_to_type) попадает снаряд.
 
 > Если стрелок будет уничтожен до того, как произойдет попадание, значение shooter будет равно nil.
 {.is-info}
@@ -258,21 +258,21 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="server_onExplosion">server_onExplosion(self, center, destructionLevel) <i>serverEventCallback</i></h3>
 
-Вызывается, когда [урожай](TODO:link_to_type) взрывается.
+Вызывается, когда [Harvestable](TODO:link_to_type) взрывается.
 
 Аргументы:
 |Тип|Имя|Описание|
 |---|---|--------|
 |table|self|Экземпляр класса.|
 |[Vec3](TODO:link_to_type)|center|Эпицентр взырва.|
-|integer|destructionLevel|Уровень разрушений, причиненных этим взрывом. Соответствует показателю прочности [детали](TODO:link_to_type).|
+|integer|destructionLevel|Уровень разрушений, причиненных этим взрывом. Соответствует показателю прочности [Shape](TODO:link_to_type).|
 {.dense}
 <h3 id="client_onMelee">client_onMelee(self, position, attacker, damage, power, direction, normal) <i>clientEventCallback</i></h3>
 
 > Если атакующий будет уничтожен до того, как произойдет удар, значение attacker будет равно nil.
 {.is-info}
 
-Вызывается, когда [урожай](TODO:link_to_type) получает удар в ближнем бою.
+Вызывается, когда [Harvestable](TODO:link_to_type) получает удар в ближнем бою.
 
 Аргументы:
 |Тип|Имя|Описание|
@@ -290,7 +290,7 @@ dateCreated: 2023-06-24T12:03:31.102Z
 > Если атакующий будет уничтожен до того, как произойдет удар, значение attacker будет равно nil.
 {.is-info}
 
-Вызывается, когда [урожай](TODO:link_to_type) получает удар в ближнем бою.
+Вызывается, когда [Harvestable](TODO:link_to_type) получает удар в ближнем бою.
 
 Аргументы:
 |Тип|Имя|Описание|
@@ -305,9 +305,9 @@ dateCreated: 2023-06-24T12:03:31.102Z
 {.dense}
 <h3 id="server_onRemoved">server_onRemoved(self, player) <i>serverEventCallback</i></h3>
 
-Вызывается, когда [игрок](TODO:link_to_type) убирает [урожай](TODO:link_to_type).
+Вызывается, когда [игрок](TODO:link_to_type) убирает [Harvestable](TODO:link_to_type).
 
-> [HarvestableClass]() должен удалять [урожай](TODO:link_to_type) с помощью [Harvestable.destroy](TODO:link_to_func).
+> [HarvestableClass]() должен удалять [Harvestable](TODO:link_to_type) с помощью [Harvestable.destroy](TODO:link_to_func).
 {.is-info}
 
 Пример:
@@ -319,10 +319,10 @@ self.harvestable:destroy()
 |Тип|Имя|Описание|
 |---|---|--------|
 |table|self|Экземпляр класса.|
-|[Player](TODO:link_to_type)|player|[Игрок](TODO:link_to_type), который хочет убрать [урожай](TODO:link_to_type).|
+|[Player](TODO:link_to_type)|player|[Игрок](TODO:link_to_type), который хочет убрать [Harvestable](TODO:link_to_type).|
 <h3 id="client_canErase">client_canErase(self) <i>clientEventCallback</i></h3>
 
-Вызывается, чтобы проверить, можно ли в данный момент удалить [урожай](TODO:link_to_type).
+Вызывается, чтобы проверить, можно ли в данный момент удалить [Harvestable](TODO:link_to_type).
 
 Аргументы:
 | Тип | Имя|     Описание    |
@@ -333,5 +333,5 @@ self.harvestable:destroy()
 Должно вернуть:
 | Тип |     Описание    |
 |-----|-----------------|
-|boolean|Логическое значение, указывающее, можно ли удалить [урожай](TODO:link_to_type) или нет. (По умолчанию используется "removable" из json, которое по умолчанию равно false)|
+|boolean|Логическое значение, указывающее, можно ли удалить [Harvestable](TODO:link_to_type) или нет. (По умолчанию используется "removable" из json, которое по умолчанию равно false)|
 {.dense}
