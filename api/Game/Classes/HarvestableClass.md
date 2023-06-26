@@ -2,7 +2,7 @@
 title: HarvestableClass
 description: Класс, который создается для каждого собираемого объекта в игре.
 published: false
-date: 2023-06-26T03:58:29.565Z
+date: 2023-06-26T04:04:15.760Z
 tags: class, harvestable, harvestableclass, класс
 editor: markdown
 dateCreated: 2023-06-24T12:03:31.102Z
@@ -309,3 +309,27 @@ dateCreated: 2023-06-24T12:03:31.102Z
 
 > [HarvestableClass]() должен удалять [урожай](TODO:link_to_type) с помощью [Harvestable.destroy](TODO:link_to_func).
 {.is-info}
+
+Пример:
+```lua
+self.harvestable:destroy()
+```
+
+Аргументы:
+|Тип|Имя|Описание|
+|---|---|--------|
+|table|self|Экземпляр класса.|
+|[Player](TODO:link_to_type)|player|[Игрок](TODO:link_to_type), который хочет убрать [урожай](TODO:link_to_type).|
+<h3 id="client_canErase">client_canErase(self) <i>clientEventCallback</i></h3>
+
+Вызывается, чтобы проверить, можно ли в данный момент удалить [урожай](TODO:link_to_type).
+
+Аргументы:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
+
+Должно вернуть:
+| Тип | Имя|     Описание    |
+|-----|----|-----------------|
+|table|self|Экземпляр класса.|
